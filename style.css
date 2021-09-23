@@ -68,7 +68,7 @@ body{
 }
 
 .divider-1{
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 36%, 57%, 1),
@@ -76,7 +76,7 @@ body{
 }
 
 .divider-2{
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 65%, 88%, 0.34),
@@ -357,4 +357,56 @@ nav.show div.icon-close{
 .card .title{
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+}
+
+/* Testemonials */
+#testemonials{
+  background: white;
+}
+
+#testemonials blockquote{
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: .25rem;
+}
+
+#testemonials blockquote p{
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+
+#testemonials blockquote p span{
+  font: 700 2.5rem serif;
+
+  position: absolute;
+  top: -0.3rem;
+  left: -1.875rem;
+  color: var(--base-color);
+}
+
+#testemonials cite{
+  display: flex;
+  align-items: center;
+}
+
+#testemonials cite img{
+  width: 3rem;
+  height: 3rem;
+  /* Coloca o que estiver nesse bloco preenchendo todo o espaço */
+  object-fit: cover;
+  clip-path: circle();
+
+  margin-right: .5rem;
+}
+
+/* Swiper */
+.swiper-slide{
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet-active{
+  background: var(--base-color);
 }
