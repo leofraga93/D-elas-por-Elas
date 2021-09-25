@@ -363,10 +363,21 @@ nav.show div.icon-close{
   margin-bottom: 0.75rem;
 }
 
-/* Testemonials */
-#testemonials{
+/* Events */
+#events{
   background: white;
 }
+
+#events .cards p time, address{
+  color: var(--text-color);
+}
+
+#events .cards i{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Testemonials */
 
 #testemonials .container{
   margin-left: 0;
@@ -427,6 +438,10 @@ nav.show div.icon-close{
 }
 
 /* Contact */
+#contact{
+  background: white;
+}
+
 #contact .grid{
   gap: 4rem;
 }
