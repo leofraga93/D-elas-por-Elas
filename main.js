@@ -19,12 +19,18 @@ for(const link of links){
 
 /* Carrossel */
 const swiper = new Swiper('.swiper', {
-  slidesPerview: 1,
+  slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination'
   },
   mousewheel: true,
-  keyboard: true
+  keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
 });
 
 /* Carregamento automático de itens da página de acordo com o scroll */
@@ -41,7 +47,7 @@ scrollReveal.reveal(`
   #services header, #services .card,
   #events .image, #events .text,
   #testemonials header, #testemonials .testemonials,
-  #contact .text, #contact .links,
+  #contact .links, #contact .text,
   footer .brand, footer .social`,
   {interval: 100}
 )
