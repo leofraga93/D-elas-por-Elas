@@ -53,8 +53,9 @@ scrollReveal.reveal(`
 )
 
 /* back2top */
+const back2TopButton = document.querySelector('.back2top')
+
 function back2Top(){
-  const back2TopButton = document.querySelector('.back2top')
   
   if(window.scrollY >= 600){
     back2TopButton.classList.add('show');
@@ -64,9 +65,10 @@ function back2Top(){
 }
 
 /* Scroll na página */  
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
+
 function changeHeaderScroll(){
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
   
   if(window.scrollY >= navHeight){
     header.classList.add('scroll');
@@ -75,8 +77,38 @@ function changeHeaderScroll(){
   }
 }
 
+/* Menu ativo de acordo seção visível na pagina */
+const sections = document.querySelectorAll('main section[id]');/* forma de pegar o que contem nas section nesse caso */
+
+function activatMenuAtcurrent(){
+
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4 /* Pega o deslocamento do eixo Y, e soma com 8 partes da tela da janela divida em 4 */
+  for(const section of sections){
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if(checkpointStart && checkpointEnd){
+      document
+        .querySelector('nav ul li a[href*='+ sectionId +']')
+        .classList.add('active')
+      
+    }else{
+      document
+        .querySelector('nav ul li a[href*='+ sectionId +']')
+        .classList.remove('active')
+
+    }
+  }
+}
+
 /* When scroll */
 window.addEventListener('scroll', function(){
   changeHeaderScroll()
   back2Top()
+  activatMenuAtcurrent()
 })
+
