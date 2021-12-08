@@ -105,6 +105,25 @@ function activatMenuAtcurrent(){
   }
 }
 
+function iniciaModal(params) {
+  const modal = document.getElementById(params);
+  if(modal){
+    modal.classList.add('mostrar');
+    modal.addEventListener('click', (e) => {
+      if(e.target.id == params || e.target.className == 'fechar'){
+        modal.classList.remove('mostrar');
+      }
+  })
+}}
+
+const btn = document.querySelector('.button');
+
+btn.addEventListener('click', () => iniciaModal('modalCadastro'));
+
+function clicou() {
+  iniciaModal('modalCadastro');
+}
+
 /* When scroll */
 window.addEventListener('scroll', function(){
   changeHeaderScroll()

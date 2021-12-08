@@ -46,7 +46,7 @@
         <div class="text">
           <h2 class="title">D'elas para Elas</h2>
           <p>Um canal exclusivo para mulheres, especializado em acolhimento, autocuidado e experiências.</p>
-          <a class="button" href="#">Agendar um horário</a>
+          <a class="button">Agendar um horário</a>
         </div>
       </div>
     </section>
@@ -113,7 +113,7 @@
                 <time datetime="27-10-2021">27/10/21</time><address> | Salvador</address>
               </p>
               <i class="icon-event_note"></i>
-              <a class="button" href="#">Ingressar</a>
+              <a class="button btnEvent" onclick="clicou()">Ingressar</a>
             </div>
           </div>
           <div class="card">
@@ -124,7 +124,7 @@
                 <time datetime="04-11-2021">04/11/21</time><address> | Salvador</address>
               </p>
               <i class="icon-event_note"></i>
-              <a class="button" href="#">Ingressar</a>
+              <a class="button btnEvent" onclick="clicou()">Ingressar</a>
             </div>
           </div>
           <div class="card">
@@ -135,7 +135,7 @@
                 <time datetime="12-11-2021">12/11/21</time><address> | Salvador</address>
               </p>
               <i class="icon-event_note"></i>
-              <a class="button" href="#">Ingressar</a>
+              <a class="button btnEvent" onclick="clicou()">Ingressar</a>
             </div>
           </div>
         </div>
@@ -208,7 +208,7 @@
         <div class="text">
           <h2 class="title">Enter em contato com a gente!</h2>
           <p>Entre em contato com a <span>D'elas para Elas</span>, queremos tirar suas dúvidas, ouvir suas crítics e sugestões e principalmente contar sua história.</p>
-          <a class="button" href="https://api.whatsapp.com/send?phone=+5571992389589&text=Oi gostaria de agendar um atendimento especializado? informe logo a baixo."  target="_blank"><i class="icon-whatsapp"></i> Entrar em contato</a>
+          <a class="buttonZap" href="https://api.whatsapp.com/send?phone=+5571992389589&text=Oi gostaria de agendar um atendimento especializado? informe logo a baixo."  target="_blank"><i class="icon-whatsapp"></i> Entrar em contato</a>
         </div>
 
         <div class="links">
@@ -243,6 +243,23 @@
   </footer>
 
   <a href="#home" class="back2top"><i class="icon-arrow-up-circle"></i></a>
+
+  <div id="modalCadastro" class="modal-container">
+    <div class="modal">
+      <button class="fechar">X</button>
+      <h3 class="title">Cadastrar Usuário</h3>
+      <form method="post" class="modalForm">
+        <ul>
+          <li><input type="text" class="input" placeholder="Nome"></li>
+          <li><input type="text" class="input" placeholder="Sobrenome"></li>
+          <li><input type="date" class="input"></li>
+          <li><input type="radio" name="Sexo"> masculino</li>
+          <li><input type="radio" name="Sexo"> feminino</li>
+        </ul>
+        <input type="button" class="button" value="Cadastrar">
+      </form>
+    </div>
+  </div>
 
   <!-- swiper.js -->
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
